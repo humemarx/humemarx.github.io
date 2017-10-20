@@ -97,7 +97,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Life,Books,Code" />
+  <meta name="keywords" content="Python,机器学习算法,线性回归,梯度下降法," />
 
 
 
@@ -113,16 +113,24 @@
 
 
 
-<meta name="description" content="世间万物，梦幻泡影">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MaxRobot">
-<meta property="og:url" content="http://marxrobot.com/categories/Python/Code/index.html">
+<meta name="description" content="介绍 线性回归是机器学习中的重要算法之一，其主要目的就是建立一个线性方程来预测目标值.线性回归所求解的是回归方程的回归系数. 举个例子，我们现在有一组数据如下所示：    \(x\)   3.30   4.40   5.50   6.71   6.93   4.17   9.78   6.18   7.59   2.17   7.04   10.79   5.31   7.99   5.65">
+<meta name="keywords" content="Python,机器学习算法,线性回归,梯度下降法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习(一)线性回归">
+<meta property="og:url" content="http://marxrobot.com/2015/08/18/linear/index.html">
 <meta property="og:site_name" content="MaxRobot">
-<meta property="og:description" content="世间万物，梦幻泡影">
+<meta property="og:description" content="介绍 线性回归是机器学习中的重要算法之一，其主要目的就是建立一个线性方程来预测目标值.线性回归所求解的是回归方程的回归系数. 举个例子，我们现在有一组数据如下所示：    \(x\)   3.30   4.40   5.50   6.71   6.93   4.17   9.78   6.18   7.59   2.17   7.04   10.79   5.31   7.99   5.65">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://marxrobot.com/2015/08/18/linear/linear_1.jpg">
+<meta property="og:image" content="http://marxrobot.com/2015/08/18/linear/linear_2.jpg">
+<meta property="og:image" content="http://marxrobot.com/2015/08/18/linear/linear_3.jpg">
+<meta property="og:image" content="http://marxrobot.com/2015/08/18/linear/linear_4.jpg">
+<meta property="og:image" content="http://marxrobot.com/2015/08/18/linear/linear_5.jpg">
+<meta property="og:updated_time" content="2017-10-20T17:38:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MaxRobot">
-<meta name="twitter:description" content="世间万物，梦幻泡影">
+<meta name="twitter:title" content="机器学习(一)线性回归">
+<meta name="twitter:description" content="介绍 线性回归是机器学习中的重要算法之一，其主要目的就是建立一个线性方程来预测目标值.线性回归所求解的是回归方程的回归系数. 举个例子，我们现在有一组数据如下所示：    \(x\)   3.30   4.40   5.50   6.71   6.93   4.17   9.78   6.18   7.59   2.17   7.04   10.79   5.31   7.99   5.65">
+<meta name="twitter:image" content="http://marxrobot.com/2015/08/18/linear/linear_1.jpg">
 
 
 
@@ -152,13 +160,13 @@
 
 
 
-  <link rel="canonical" href="http://marxrobot.com/categories/Python/Code/"/>
+  <link rel="canonical" href="http://marxrobot.com/2015/08/18/linear/"/>
 
 
 
 
 
-  <title>分类: Code | MaxRobot</title>
+  <title>机器学习(一)线性回归 | MaxRobot</title>
   
 
 
@@ -187,7 +195,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -325,55 +333,422 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Code<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://marxrobot.com/2015/08/18/linear/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Marx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MaxRobot">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/09/16/hello-world/" itemprop="url">
-              
-                <span itemprop="name">Hello World</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">机器学习(一)线性回归</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-16T15:13:41+08:00"
-              content="2017-09-16" >
-          09-16
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-08-18T10:36:21+08:00">
+                2015-08-18
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye">本文总阅读量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default">
+</script>
+<h3 id="介绍">介绍</h3>
+<p>线性回归是机器学习中的重要算法之一，其主要目的就是建立一个线性方程来预测目标值.线性回归所求解的是回归方程的回归系数.</p>
+举个例子，我们现在有一组数据如下所示：
+<table border="1">
+<tr>
+<th>
+<span class="math inline">\(x\)</span>
+</th>
+<td>
+3.30
+</td>
+<td>
+4.40
+</td>
+<td>
+5.50
+</td>
+<td>
+6.71
+</td>
+<td>
+6.93
+</td>
+<td>
+4.17
+</td>
+<td>
+9.78
+</td>
+<td>
+6.18
+</td>
+<td>
+7.59
+</td>
+<td>
+2.17
+</td>
+<td>
+7.04
+</td>
+<td>
+10.79
+</td>
+<td>
+5.31
+</td>
+<td>
+7.99
+</td>
+<td>
+5.65
+</td>
+<td>
+9.27
+</td>
+<td>
+3.10
+</td>
+</tr>
+<tr>
+<th>
+<span class="math inline">\(y\)</span>
+</th>
+<td>
+1.70
+</td>
+<td>
+2.76
+</td>
+<td>
+2.09
+</td>
+<td>
+3.19
+</td>
+<td>
+1.69
+</td>
+<td>
+1.58
+</td>
+<td>
+3.37
+</td>
+<td>
+2.60
+</td>
+<td>
+2.53
+</td>
+<td>
+1.22
+</td>
+<td>
+2.83
+</td>
+<td>
+3.47
+</td>
+<td>
+1.65
+</td>
+<td>
+2.90
+</td>
+<td>
+2.42
+</td>
+<td>
+2.94
+</td>
+<td>
+1.30
+</td>
+</tr>
+</table>
+<p>其原始和归一化后的数据分布图如下所示：</p>
+<center>
+<img src="/2015/08/18/linear/linear_1.jpg" alt="linear1" title="原始数据"> <img src="/2015/08/18/linear/linear_2.jpg" alt="linear2" title="归一化数据">
+</center>
+<h3 id="线性回归">线性回归</h3>
+<p>线性回归的一般问题就是，针对给出的数据，拟合出一个能够较为准确预测出输出结果的线性模型，模型一般如下：</p>
+<p><span class="math display">\[  f(x) = wx+b  \tag {1}  \]</span></p>
+<p><span class="math display">\[J(w,b) = \frac{1}{2}\sum_{i=1}^n(y_i-f(x_i))^2 = \frac{1}{2}\sum_{i=1}^n(y_i-wx_i-b)^2 \tag{2}\]</span></p>
+<p>上式中:</p>
+<ul>
+<li><span class="math inline">\(f(x)\)</span>是预测值<br>
+</li>
+<li><span class="math inline">\(y_i\)</span>是真实值<br>
+</li>
+<li><span class="math inline">\(J(w,b)\)</span>是代价函数<br>
+</li>
+<li><span class="math inline">\(x_i\)</span>是输入值<br>
+</li>
+<li><span class="math inline">\(w\)</span>和<span class="math inline">\(b\)</span>是回归方程需要求解的参数</li>
+</ul>
+<p><span class="math inline">\(J(w,b)\)</span>表示了预测结果和真实结果之间的误差，<span class="math inline">\(J(w,b)\)</span>越小表明预测结果越接近真实结果，因此我们希望找到一组<span class="math inline">\(w\)</span>和<span class="math inline">\(b\)</span>使得<span class="math inline">\(J(w,b)\)</span>能够最小，因此对<span class="math inline">\(w\)</span>，<span class="math inline">\(b\)</span>的求解问题就变成了一个如下所示的泛函能量最小化的问题：</p>
+<p><span class="math display">\[  \hat{(w,b)} = \mathop{\arg\min}\limits_{w,b}(J(w,b))  \tag{3} \]</span></p>
+<p>根据公式<span class="math inline">\({2}\)</span>分别求<span class="math inline">\(J(w,b)\)</span>关于<span class="math inline">\(w\)</span>和<span class="math inline">\(b\)</span>的偏导数：</p>
+<p><span class="math display">\[  \frac{\partial J(w,b)}{\partial w} = -\sum_{i=1}^nx_i(y_i-wx_i-b) \tag{4}  \]</span></p>
+<p><span class="math display">\[  \frac{\partial J(w,b)}{\partial b} = -\sum_{i=1}^n(y_i-wx_i-b) \tag{5} \]</span></p>
+<h3 id="最小二乘法">最小二乘法</h3>
+<p>对于公式<span class="math inline">\({(3)}\)</span>中<span class="math inline">\(J(w,b)\)</span>的最小化问题，我们可以将其看作是自变量为<span class="math inline">\(w\)</span>,<span class="math inline">\(b\)</span>,因变量为<span class="math inline">\(J(w,b)\)</span>的函数，这样最小化的问题就变成了求<span class="math inline">\(J(w,b)\)</span>极值的问题，根据数学知识我们知道，函数的极值点为偏导数为<span class="math inline">\(0\)</span>的点，因此：</p>
+<p><span class="math display">\[  \frac{\partial J(w,b)}{\partial w} = -\sum_{i=1}^nx_i(y_i-wx_i-b) = 0 \tag{6} \]</span></p>
+<p><span class="math display">\[  \frac{\partial J(w,b)}{\partial b} = -\sum_{i=1}^n(y_i-wx_i-b) = 0 \tag{7} \]</span></p>
+<p>求解二元二次方程组得到：</p>
+<p><span class="math display">\[  w = \frac{\sum_{i=1}^n(x_i-\mathop{x}\limits^-)(y_i-\mathop{y}\limits^-)}{\sum_{i=1}^n(x_i-\mathop{x}\limits^-)^2} \tag{8} \]</span></p>
+<p><span class="math display">\[  b = \mathop{y}\limits^--w\mathop{x}\limits^- \tag{9} \]</span></p>
+<p>上式中：</p>
+<ul>
+<li><span class="math inline">\(\mathop{x}\limits^-=\frac{1}{n}\sum_{i=1}^nx_i\)</span>:表示<span class="math inline">\(x\)</span>的均值</li>
+<li><span class="math inline">\(\mathop{y}\limits^-=\frac{1}{n}\sum_{i=1}^ny_i\)</span>:表示<span class="math inline">\(y\)</span>的均值</li>
+</ul>
+<p>根据样本的方差和协方差公式我们有：</p>
+<p><span class="math display">\[ var(x) = \frac{\sum_{i=1}^n(x_i-\mathop{x}\limits^-)^2}{n-1} \tag{10}\]</span></p>
+<p><span class="math display">\[ cov(x,y) = \frac{\sum_{i=1}^n(x_i-\mathop{x}\limits^-)(y_i-\mathop{y}\limits^-)}{n-1} \tag{11}\]</span></p>
+<p>方差<span class="math inline">\(var(x)\)</span>是用来衡量样本分散程度的，方差越小，样本越集中；方差越大，样本越分散<br>
+而协方差是用来衡量两个变量的线性相关性，协方差为正，说明两个变量是线性正相关；协方差为负，说明两个变量是线性负相关；协方差为0，说明两个变量没有线性相关性. 故式<span class="math inline">\((8)\)</span>可表示为：</p>
+<p><span class="math display">\[  w = \frac{conv(x,y)}{var(x)} \tag{12} \]</span></p>
+<p>最小二乘法的优势在于计算简单，快速，并且找到的估计参数是全局极小值；缺点是对于异常值极其敏感. 对上述数据利用最小二乘法拟合得到的曲线：</p>
+<center>
+<img src="/2015/08/18/linear/linear_3.jpg" alt="linear3" title="线性回归拟合曲线">
+</center>
+<h3 id="梯度下降法">梯度下降法</h3>
+<p>梯度下降是一种最优化算法，对一个函数来说，梯度不仅表示某个向量的偏导数，同时还代表了该向量的方向，在这个方向上，函数增加得最快，在相反的方向上，函数减小得最快。因此为了最小化目标函数<span class="math inline">\(J(w,b)\)</span>,我们可以通过不断迭代的方法，使<span class="math inline">\(w\)</span>和<span class="math inline">\(b\)</span>沿着梯度下降的方向进行移动，逐渐逼近极小值.</p>
+<p><span class="math display">\[  w^{\tau+1} := w^\tau - \alpha\frac{\partial J(w,b)}{\partial w} = w^\tau + \alpha\sum_{i=1}^nx_i(y_i-wx_i-b) \tag{13} \]</span></p>
+<p><span class="math display">\[  b^{\tau+1} := b^\tau - \alpha\frac{\partial J(w,b)}{\partial b} = b^\tau + \alpha\sum_{i=1}^n(y_i-wx_i-b) \tag{14} \]</span> 上式中</p>
+<ul>
+<li><span class="math inline">\(\tau\)</span>是迭代次数<br>
+</li>
+<li><span class="math inline">\(\alpha\)</span>是学习率即每次参数移动的步长，学习率太大则可能会错过极小值，太小则会导致收敛速度太慢<br>
+</li>
+<li><span class="math inline">\(w^\tau\)</span>和<span class="math inline">\(b^\tau\)</span>是第<span class="math inline">\(\tau\)</span>次的参数<br>
+</li>
+<li><span class="math inline">\(w^{\tau+1}\)</span>和<span class="math inline">\(b^{\tau+1}\)</span>是第<span class="math inline">\({\tau+1}\)</span>次的参数</li>
+</ul>
+<h4 id="随机梯度下降法">随机梯度下降法</h4>
+<p>由式<span class="math inline">\({(13)}\)</span>和<span class="math inline">\({(14)}\)</span>可知，梯度下降法的每次参数更新，都需要计算整个数据集,因此运算效率是极低的.而随机梯度下降法的每次更新，都是对数据集中的一个样本计算其代价函数，然后求偏导更新模型参数：</p>
+<p><span class="math display">\[  w^{\tau+1} := w^\tau + {\alpha}x_i(y_i-wx_i-b) \tag{15} \]</span></p>
+<p><span class="math display">\[  b^{\tau+1} := b^\tau + {\alpha}(y_i-wx_i-b) \tag{16} \]</span></p>
+<h4 id="小批量梯度下降法">小批量梯度下降法</h4>
+<p>每次只用一个样本对模型参数进行更新会导致迭代过程中模型参数的变化会很剧烈，同时目标函数在寻找极小值的过程中会有较大震荡.小批量梯度下降法的每次更新，都会对数据集中的一小批样本计算其代价函数，然后求偏导更新模型参数.</p>
+<p><span class="math display">\[  w^{\tau+1} := w^\tau + {\alpha}\sum_{i=1}^mx_i(y_i-wx_i-b) \tag{17} \]</span></p>
+<p><span class="math display">\[  b^{\tau+1} := b^\tau + {\alpha}\sum_{i=1}^m(y_i-wx_i-b) \tag{18} \]</span></p>
+<p>其中：</p>
+<ul>
+<li><span class="math inline">\(m{\subset}n\)</span>, <span class="math inline">\(m\)</span>是<span class="math inline">\(n\)</span>的子集</li>
+</ul>
+<h4 id="梯度下降优化算法">梯度下降优化算法</h4>
+<p>梯度下降法中参数更新策略还有一些其他的优化方法，如动量法，Adagrad，Adadelta，Adam等等 对于文章开头的数据利用两种梯度下降法拟合得到的曲线为：</p>
+<center>
+<img src="/2015/08/18/linear/linear_4.jpg" alt="linear4" title="梯度下降法拟合曲线">
+</center>
+<p>下图为不同梯度下降优化算法的代价函数的变化：</p>
+<center>
+<img src="/2015/08/18/linear/linear_5.jpg" alt="linear5" title="误差函数收敛曲线">
+</center>
+<p>由上图可以看出Adam相对于SGD会收敛的更快，并且代价函数的震荡相对来说更小.</p>
+<h3 id="总结">总结</h3>
+<p>线性回归是机器学习算法中最为基础和简单的，确立了<span class="math inline">\(方法=模型+策略+算法\)</span>的基本思路</p>
+<ul>
+<li>模型，指的是需要拟合的样本空间的概率分布或者决策函数</li>
+<li>策略，指的是我们是通过什么准则来学习或者选择最最优模型的，一般监督学习中的两个基本策略是经验风险和结构风险最小化</li>
+<li>算法，指的是通过什么方法去最小化经验风险或者结构风险，一般常见的有SGD,Adam等</li>
+</ul>
+<p>线性回归中用到的各种概念，方法在其他各种更为复杂的回归方法中都是适用的，每种机器学习算法只不过是或者模型不同，或者是策略不同，或者是算法不同</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+<div align="center">
+  
+    <div class="copyright">
+    <p><span>
+    <b>本文地址：</b><a href="/2015/08/18/linear/" title="机器学习(一)线性回归">http://marxrobot.com/2015/08/18/linear/</a><br /><b>转载请注明出处，谢谢！</b>
+    </span></p>
+    </div>
+  
+</div>
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果觉得对您有所帮助，欢迎赞助瓶饮料支持一下</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Marx 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/机器学习算法/" rel="tag"># 机器学习算法</a>
+          
+            <a href="/tags/线性回归/" rel="tag"># 线性回归</a>
+          
+            <a href="/tags/梯度下降法/" rel="tag"># 梯度下降法</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/16/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -381,6 +756,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -401,8 +780,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -420,7 +808,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -431,7 +819,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -442,7 +830,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -499,6 +887,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性回归"><span class="nav-number">2.</span> <span class="nav-text">线性回归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最小二乘法"><span class="nav-number">3.</span> <span class="nav-text">最小二乘法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#梯度下降法"><span class="nav-number">4.</span> <span class="nav-text">梯度下降法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#随机梯度下降法"><span class="nav-number">4.1.</span> <span class="nav-text">随机梯度下降法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小批量梯度下降法"><span class="nav-number">4.2.</span> <span class="nav-text">小批量梯度下降法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#梯度下降优化算法"><span class="nav-number">4.3.</span> <span class="nav-text">梯度下降优化算法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -644,6 +1048,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
