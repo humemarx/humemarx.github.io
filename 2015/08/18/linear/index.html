@@ -113,23 +113,23 @@
 
 
 
-<meta name="description" content="介绍 线性回归是机器学习中的重要算法之一，其主要目的就是建立一个线性方程来预测目标值.线性回归所求解的是回归方程的回归系数. 举个例子，我们现在有一组数据如下所示：    \(x\)   3.30   4.40   5.50   6.71   6.93   4.17   9.78   6.18   7.59   2.17   7.04   10.79   5.31   7.99   5.65">
+<meta name="description" content="介绍 线性回归是机器学习中的重要算法之一，其主要目的就是建立一个线性方程来预测目标值.线性回归所求解的是回归方程的回归系数. 举个例子，我们现在有一组数据如下所示：    \(x\)   \(3.30\)   \(4.40\)   \(5.50\)   \(6.71\)   \(6.93\)   \(4.17\)   \(9.78\)   \(6.18\)   \(7.59\)   \(2.1">
 <meta name="keywords" content="Python,机器学习算法,线性回归,梯度下降法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习(一)线性回归">
 <meta property="og:url" content="http://marxrobot.com/2015/08/18/linear/index.html">
 <meta property="og:site_name" content="MaxRobot">
-<meta property="og:description" content="介绍 线性回归是机器学习中的重要算法之一，其主要目的就是建立一个线性方程来预测目标值.线性回归所求解的是回归方程的回归系数. 举个例子，我们现在有一组数据如下所示：    \(x\)   3.30   4.40   5.50   6.71   6.93   4.17   9.78   6.18   7.59   2.17   7.04   10.79   5.31   7.99   5.65">
+<meta property="og:description" content="介绍 线性回归是机器学习中的重要算法之一，其主要目的就是建立一个线性方程来预测目标值.线性回归所求解的是回归方程的回归系数. 举个例子，我们现在有一组数据如下所示：    \(x\)   \(3.30\)   \(4.40\)   \(5.50\)   \(6.71\)   \(6.93\)   \(4.17\)   \(9.78\)   \(6.18\)   \(7.59\)   \(2.1">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://marxrobot.com/2015/08/18/linear/linear_1.jpg">
 <meta property="og:image" content="http://marxrobot.com/2015/08/18/linear/linear_2.jpg">
 <meta property="og:image" content="http://marxrobot.com/2015/08/18/linear/linear_3.jpg">
 <meta property="og:image" content="http://marxrobot.com/2015/08/18/linear/linear_4.jpg">
 <meta property="og:image" content="http://marxrobot.com/2015/08/18/linear/linear_5.jpg">
-<meta property="og:updated_time" content="2017-10-21T01:15:09.000Z">
+<meta property="og:updated_time" content="2017-10-21T01:20:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习(一)线性回归">
-<meta name="twitter:description" content="介绍 线性回归是机器学习中的重要算法之一，其主要目的就是建立一个线性方程来预测目标值.线性回归所求解的是回归方程的回归系数. 举个例子，我们现在有一组数据如下所示：    \(x\)   3.30   4.40   5.50   6.71   6.93   4.17   9.78   6.18   7.59   2.17   7.04   10.79   5.31   7.99   5.65">
+<meta name="twitter:description" content="介绍 线性回归是机器学习中的重要算法之一，其主要目的就是建立一个线性方程来预测目标值.线性回归所求解的是回归方程的回归系数. 举个例子，我们现在有一组数据如下所示：    \(x\)   \(3.30\)   \(4.40\)   \(5.50\)   \(6.71\)   \(6.93\)   \(4.17\)   \(9.78\)   \(6.18\)   \(7.59\)   \(2.1">
 <meta name="twitter:image" content="http://marxrobot.com/2015/08/18/linear/linear_1.jpg">
 
 
@@ -452,55 +452,55 @@
 <span class="math inline">\(x\)</span>
 </th>
 <td>
-3.30
+<span class="math inline">\(3.30\)</span>
 </td>
 <td>
-4.40
+<span class="math inline">\(4.40\)</span>
 </td>
 <td>
-5.50
+<span class="math inline">\(5.50\)</span>
 </td>
 <td>
-6.71
+<span class="math inline">\(6.71\)</span>
 </td>
 <td>
-6.93
+<span class="math inline">\(6.93\)</span>
 </td>
 <td>
-4.17
+<span class="math inline">\(4.17\)</span>
 </td>
 <td>
-9.78
+<span class="math inline">\(9.78\)</span>
 </td>
 <td>
-6.18
+<span class="math inline">\(6.18\)</span>
 </td>
 <td>
-7.59
+<span class="math inline">\(7.59\)</span>
 </td>
 <td>
-2.17
+<span class="math inline">\(2.17\)</span>
 </td>
 <td>
-7.04
+<span class="math inline">\(7.04\)</span>
 </td>
 <td>
-10.79
+<span class="math inline">\(10.79\)</span>
 </td>
 <td>
-5.31
+<span class="math inline">\(5.31\)</span>
 </td>
 <td>
-7.99
+<span class="math inline">\(7.99\)</span>
 </td>
 <td>
-5.65
+<span class="math inline">\(5.65\)</span>
 </td>
 <td>
-9.27
+<span class="math inline">\(9.27\)</span>
 </td>
 <td>
-3.10
+<span class="math inline">\(3.10\)</span>
 </td>
 </tr>
 <tr>
@@ -508,55 +508,55 @@
 <span class="math inline">\(y\)</span>
 </th>
 <td>
-1.70
+<span class="math inline">\(1.70\)</span>
 </td>
 <td>
-2.76
+<span class="math inline">\(2.76\)</span>
 </td>
 <td>
-2.09
+<span class="math inline">\(2.09\)</span>
 </td>
 <td>
-3.19
+<span class="math inline">\(3.19\)</span>
 </td>
 <td>
-1.69
+<span class="math inline">\(1.69\)</span>
 </td>
 <td>
-1.58
+<span class="math inline">\(1.58\)</span>
 </td>
 <td>
-3.37
+<span class="math inline">\(3.37\)</span>
 </td>
 <td>
-2.60
+<span class="math inline">\(2.60\)</span>
 </td>
 <td>
-2.53
+<span class="math inline">\(2.53\)</span>
 </td>
 <td>
-1.22
+<span class="math inline">\(1.22\)</span>
 </td>
 <td>
-2.83
+<span class="math inline">\(2.83\)</span>
 </td>
 <td>
-3.47
+<span class="math inline">\(3.47\)</span>
 </td>
 <td>
-1.65
+<span class="math inline">\(1.65\)</span>
 </td>
 <td>
-2.90
+<span class="math inline">\(2.90\)</span>
 </td>
 <td>
-2.42
+<span class="math inline">\(2.42\)</span>
 </td>
 <td>
-2.94
+<span class="math inline">\(2.94\)</span>
 </td>
 <td>
-1.30
+<span class="math inline">\(1.30\)</span>
 </td>
 </tr>
 </table>
@@ -601,7 +601,7 @@
 <p><span class="math display">\[ var(x) = \frac{\sum_{i=1}^n(x_i-\mathop{x}\limits^-)^2}{n-1} \tag{10}\]</span></p>
 <p><span class="math display">\[ cov(x,y) = \frac{\sum_{i=1}^n(x_i-\mathop{x}\limits^-)(y_i-\mathop{y}\limits^-)}{n-1} \tag{11}\]</span></p>
 <p>方差<span class="math inline">\(var(x)\)</span>是用来衡量样本分散程度的，方差越小，样本越集中；方差越大，样本越分散<br>
-而协方差是用来衡量两个变量的线性相关性，协方差为正，说明两个变量是线性正相关；协方差为负，说明两个变量是线性负相关；协方差为0，说明两个变量没有线性相关性. 故式<span class="math inline">\((8)\)</span>可表示为：</p>
+而协方差是用来衡量两个变量的线性相关性，协方差为正，说明两个变量是线性正相关；协方差为负，说明两个变量是线性负相关；协方差为<span class="math inline">\(0\)</span>，说明两个变量没有线性相关性. 故式<span class="math inline">\((8)\)</span>可表示为：</p>
 <p><span class="math display">\[  w = \frac{conv(x,y)}{var(x)} \tag{12} \]</span></p>
 <p>最小二乘法的优势在于计算简单，快速，并且找到的估计参数是全局极小值；缺点是对于异常值极其敏感. 对上述数据利用最小二乘法拟合得到的曲线：</p>
 <center>
