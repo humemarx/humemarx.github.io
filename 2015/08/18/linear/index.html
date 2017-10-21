@@ -126,7 +126,7 @@
 <meta property="og:image" content="http://marxrobot.com/2015/08/18/linear/linear_3.jpg">
 <meta property="og:image" content="http://marxrobot.com/2015/08/18/linear/linear_4.jpg">
 <meta property="og:image" content="http://marxrobot.com/2015/08/18/linear/linear_5.jpg">
-<meta property="og:updated_time" content="2017-10-20T17:38:51.000Z">
+<meta property="og:updated_time" content="2017-10-21T01:08:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习(一)线性回归">
 <meta name="twitter:description" content="介绍 线性回归是机器学习中的重要算法之一，其主要目的就是建立一个线性方程来预测目标值.线性回归所求解的是回归方程的回归系数. 举个例子，我们现在有一组数据如下所示：    \(x\)   3.30   4.40   5.50   6.71   6.93   4.17   9.78   6.18   7.59   2.17   7.04   10.79   5.31   7.99   5.65">
@@ -589,7 +589,7 @@
 <p>对于公式<span class="math inline">\({(3)}\)</span>中<span class="math inline">\(J(w,b)\)</span>的最小化问题，我们可以将其看作是自变量为<span class="math inline">\(w\)</span>,<span class="math inline">\(b\)</span>,因变量为<span class="math inline">\(J(w,b)\)</span>的函数，这样最小化的问题就变成了求<span class="math inline">\(J(w,b)\)</span>极值的问题，根据数学知识我们知道，函数的极值点为偏导数为<span class="math inline">\(0\)</span>的点，因此：</p>
 <p><span class="math display">\[  \frac{\partial J(w,b)}{\partial w} = -\sum_{i=1}^nx_i(y_i-wx_i-b) = 0 \tag{6} \]</span></p>
 <p><span class="math display">\[  \frac{\partial J(w,b)}{\partial b} = -\sum_{i=1}^n(y_i-wx_i-b) = 0 \tag{7} \]</span></p>
-<p>求解二元二次方程组得到：</p>
+<p>求解方程组得到：</p>
 <p><span class="math display">\[  w = \frac{\sum_{i=1}^n(x_i-\mathop{x}\limits^-)(y_i-\mathop{y}\limits^-)}{\sum_{i=1}^n(x_i-\mathop{x}\limits^-)^2} \tag{8} \]</span></p>
 <p><span class="math display">\[  b = \mathop{y}\limits^--w\mathop{x}\limits^- \tag{9} \]</span></p>
 <p>上式中：</p>
@@ -803,7 +803,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -814,7 +814,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
