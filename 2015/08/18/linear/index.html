@@ -113,23 +113,23 @@
 
 
 
-<meta name="description" content="介绍 线性回归是机器学习中的重要算法之一，其主要目的就是建立一个线性方程来预测目标值.线性回归所求解的是回归方程的回归系数. 举个例子，我们现在有一组数据如下所示：    \(x\)   \(3.30\)   \(4.40\)   \(5.50\)   \(6.71\)   \(6.93\)   \(4.17\)   \(9.78\)   \(6.18\)   \(7.59\)   \(2.1">
+<meta name="description" content="介绍 线性回归是机器学习中的重要算法之一，其主要目的就是建立一个线性方程来预测目标值.线性回归所求解的是回归方程的回归系数. 举个例子，我们现在有一组数据如下所示：    \(x\)   3.30   4.40   5.50   6.71   6.93   4.17   9.78   6.18   7.59   2.17   7.04   10.79   5.31   7.99   5.65">
 <meta name="keywords" content="Python,机器学习算法,线性回归,梯度下降法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习(一)线性回归">
 <meta property="og:url" content="http://marxrobot.com/2015/08/18/linear/index.html">
 <meta property="og:site_name" content="MaxRobot">
-<meta property="og:description" content="介绍 线性回归是机器学习中的重要算法之一，其主要目的就是建立一个线性方程来预测目标值.线性回归所求解的是回归方程的回归系数. 举个例子，我们现在有一组数据如下所示：    \(x\)   \(3.30\)   \(4.40\)   \(5.50\)   \(6.71\)   \(6.93\)   \(4.17\)   \(9.78\)   \(6.18\)   \(7.59\)   \(2.1">
+<meta property="og:description" content="介绍 线性回归是机器学习中的重要算法之一，其主要目的就是建立一个线性方程来预测目标值.线性回归所求解的是回归方程的回归系数. 举个例子，我们现在有一组数据如下所示：    \(x\)   3.30   4.40   5.50   6.71   6.93   4.17   9.78   6.18   7.59   2.17   7.04   10.79   5.31   7.99   5.65">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://marxrobot.com/2015/08/18/linear/linear_1.jpg">
 <meta property="og:image" content="http://marxrobot.com/2015/08/18/linear/linear_2.jpg">
 <meta property="og:image" content="http://marxrobot.com/2015/08/18/linear/linear_3.jpg">
 <meta property="og:image" content="http://marxrobot.com/2015/08/18/linear/linear_4.jpg">
 <meta property="og:image" content="http://marxrobot.com/2015/08/18/linear/linear_5.jpg">
-<meta property="og:updated_time" content="2017-10-21T01:20:18.000Z">
+<meta property="og:updated_time" content="2017-10-21T01:32:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习(一)线性回归">
-<meta name="twitter:description" content="介绍 线性回归是机器学习中的重要算法之一，其主要目的就是建立一个线性方程来预测目标值.线性回归所求解的是回归方程的回归系数. 举个例子，我们现在有一组数据如下所示：    \(x\)   \(3.30\)   \(4.40\)   \(5.50\)   \(6.71\)   \(6.93\)   \(4.17\)   \(9.78\)   \(6.18\)   \(7.59\)   \(2.1">
+<meta name="twitter:description" content="介绍 线性回归是机器学习中的重要算法之一，其主要目的就是建立一个线性方程来预测目标值.线性回归所求解的是回归方程的回归系数. 举个例子，我们现在有一组数据如下所示：    \(x\)   3.30   4.40   5.50   6.71   6.93   4.17   9.78   6.18   7.59   2.17   7.04   10.79   5.31   7.99   5.65">
 <meta name="twitter:image" content="http://marxrobot.com/2015/08/18/linear/linear_1.jpg">
 
 
@@ -452,55 +452,55 @@
 <span class="math inline">\(x\)</span>
 </th>
 <td>
-<span class="math inline">\(3.30\)</span>
+3.30
 </td>
 <td>
-<span class="math inline">\(4.40\)</span>
+4.40
 </td>
 <td>
-<span class="math inline">\(5.50\)</span>
+5.50
 </td>
 <td>
-<span class="math inline">\(6.71\)</span>
+6.71
 </td>
 <td>
-<span class="math inline">\(6.93\)</span>
+6.93
 </td>
 <td>
-<span class="math inline">\(4.17\)</span>
+4.17
 </td>
 <td>
-<span class="math inline">\(9.78\)</span>
+9.78
 </td>
 <td>
-<span class="math inline">\(6.18\)</span>
+6.18
 </td>
 <td>
-<span class="math inline">\(7.59\)</span>
+7.59
 </td>
 <td>
-<span class="math inline">\(2.17\)</span>
+2.17
 </td>
 <td>
-<span class="math inline">\(7.04\)</span>
+7.04
 </td>
 <td>
-<span class="math inline">\(10.79\)</span>
+10.79
 </td>
 <td>
-<span class="math inline">\(5.31\)</span>
+5.31
 </td>
 <td>
-<span class="math inline">\(7.99\)</span>
+7.99
 </td>
 <td>
-<span class="math inline">\(5.65\)</span>
+5.65
 </td>
 <td>
-<span class="math inline">\(9.27\)</span>
+9.27
 </td>
 <td>
-<span class="math inline">\(3.10\)</span>
+3.10
 </td>
 </tr>
 <tr>
@@ -508,55 +508,55 @@
 <span class="math inline">\(y\)</span>
 </th>
 <td>
-<span class="math inline">\(1.70\)</span>
+1.70
 </td>
 <td>
-<span class="math inline">\(2.76\)</span>
+2.76
 </td>
 <td>
-<span class="math inline">\(2.09\)</span>
+2.09
 </td>
 <td>
-<span class="math inline">\(3.19\)</span>
+3.19
 </td>
 <td>
-<span class="math inline">\(1.69\)</span>
+1.69
 </td>
 <td>
-<span class="math inline">\(1.58\)</span>
+1.58
 </td>
 <td>
-<span class="math inline">\(3.37\)</span>
+3.37
 </td>
 <td>
-<span class="math inline">\(2.60\)</span>
+2.60
 </td>
 <td>
-<span class="math inline">\(2.53\)</span>
+2.53
 </td>
 <td>
-<span class="math inline">\(1.22\)</span>
+1.22
 </td>
 <td>
-<span class="math inline">\(2.83\)</span>
+2.83
 </td>
 <td>
-<span class="math inline">\(3.47\)</span>
+3.47
 </td>
 <td>
-<span class="math inline">\(1.65\)</span>
+1.65
 </td>
 <td>
-<span class="math inline">\(2.90\)</span>
+2.90
 </td>
 <td>
-<span class="math inline">\(2.42\)</span>
+2.42
 </td>
 <td>
-<span class="math inline">\(2.94\)</span>
+2.94
 </td>
 <td>
-<span class="math inline">\(1.30\)</span>
+1.30
 </td>
 </tr>
 </table>
