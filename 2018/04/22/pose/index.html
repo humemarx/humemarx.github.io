@@ -97,7 +97,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Life,Books,Code" />
+  <meta name="keywords" content="深度学习,人体姿态估计,CMU," />
 
 
 
@@ -113,16 +113,32 @@
 
 
 
-<meta name="description" content="世间万物，梦幻泡影">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MaxRobot">
-<meta property="og:url" content="http://marxrobot.com/index.html">
+<meta name="description" content="介绍 多人体姿态估计的方法主要分为两大类，自顶向下（top-bottom）和自底向上(bottom-top)的方法。 自顶向下的方法是指先通过人体检测检测出每个人体框的位置，然后对每个人体框单独进行人体关节点估计，一般的RCNN都是这个思路，这类方法通常可以获得很高的精度，但是速度较慢。 而自底向上的方法是指先估计出人体的关节点，然后根据图论知识判断每个关节点归属于哪一个人，本文介绍的这篇论">
+<meta name="keywords" content="深度学习,人体姿态估计,CMU">
+<meta property="og:type" content="article">
+<meta property="og:title" content="人体姿态估计论文——《Realtime Multi-Person 2D Pose Estimation using Part Affinity Fields》">
+<meta property="og:url" content="http://marxrobot.com/2018/04/22/pose/index.html">
 <meta property="og:site_name" content="MaxRobot">
-<meta property="og:description" content="世间万物，梦幻泡影">
+<meta property="og:description" content="介绍 多人体姿态估计的方法主要分为两大类，自顶向下（top-bottom）和自底向上(bottom-top)的方法。 自顶向下的方法是指先通过人体检测检测出每个人体框的位置，然后对每个人体框单独进行人体关节点估计，一般的RCNN都是这个思路，这类方法通常可以获得很高的精度，但是速度较慢。 而自底向上的方法是指先估计出人体的关节点，然后根据图论知识判断每个关节点归属于哪一个人，本文介绍的这篇论">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://marxrobot.com/2018/04/22/pose/nets.png">
+<meta property="og:image" content="http://marxrobot.com/2018/04/22/pose/pose1.png">
+<meta property="og:image" content="http://marxrobot.com/2018/04/22/pose/pose2.png">
+<meta property="og:image" content="http://marxrobot.com/2018/04/22/pose/pose3.png">
+<meta property="og:image" content="http://marxrobot.com/2018/04/22/pose/pose4.png">
+<meta property="og:image" content="http://marxrobot.com/2018/04/22/pose/pose5.png">
+<meta property="og:image" content="http://marxrobot.com/2018/04/22/pose/pose6.png">
+<meta property="og:image" content="http://marxrobot.com/2018/04/22/pose/pose7.png">
+<meta property="og:image" content="http://marxrobot.com/2018/04/22/pose/pose8.png">
+<meta property="og:image" content="http://marxrobot.com/2018/04/22/pose/pose9.png">
+<meta property="og:image" content="http://marxrobot.com/2018/04/22/pose/pose10.png">
+<meta property="og:image" content="http://marxrobot.com/2018/04/22/pose/pose11.png">
+<meta property="og:image" content="http://marxrobot.com/2018/04/22/pose/pose12.png">
+<meta property="og:updated_time" content="2018-06-13T12:15:27.189Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MaxRobot">
-<meta name="twitter:description" content="世间万物，梦幻泡影">
+<meta name="twitter:title" content="人体姿态估计论文——《Realtime Multi-Person 2D Pose Estimation using Part Affinity Fields》">
+<meta name="twitter:description" content="介绍 多人体姿态估计的方法主要分为两大类，自顶向下（top-bottom）和自底向上(bottom-top)的方法。 自顶向下的方法是指先通过人体检测检测出每个人体框的位置，然后对每个人体框单独进行人体关节点估计，一般的RCNN都是这个思路，这类方法通常可以获得很高的精度，但是速度较慢。 而自底向上的方法是指先估计出人体的关节点，然后根据图论知识判断每个关节点归属于哪一个人，本文介绍的这篇论">
+<meta name="twitter:image" content="http://marxrobot.com/2018/04/22/pose/nets.png">
 
 
 
@@ -152,13 +168,13 @@
 
 
 
-  <link rel="canonical" href="http://marxrobot.com/"/>
+  <link rel="canonical" href="http://marxrobot.com/2018/04/22/pose/"/>
 
 
 
 
 
-  <title> Life,Books,Code - MaxRobot - 世间万物，梦幻泡影 </title>
+  <title>人体姿态估计论文——《Realtime Multi-Person 2D Pose Estimation using Part Affinity Fields》 | MaxRobot</title>
   
 
 
@@ -187,8 +203,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -325,9 +340,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -357,9 +372,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/22/pose/" itemprop="url">人体姿态估计论文——《Realtime Multi-Person 2D Pose Estimation using Part Affinity Fields》</a></h2>
+          <h2 class="post-title" itemprop="name headline">人体姿态估计论文——《Realtime Multi-Person 2D Pose Estimation using Part Affinity Fields》</h2>
         
 
         <div class="post-meta">
@@ -413,165 +426,13 @@
           
 
           
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          
-
-介绍
-多人体姿态估计的方法主要分为两大类，自顶向下（top-bottom）和自底向上(bottom-top)的方法。
-自顶向下的方法是指先通过人体检测检测出每个人体框的位置，然后对每个人体框单独进行人体关节点估计，一般的RCNN都是这个思路，这类方法通常可以获得很高的精度，但是速度较慢。
-而自
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/22/pose/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-<div align="center">
-  
-</div>
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://marxrobot.com/2017/03/18/linear/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Marx">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MaxRobot">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/18/linear/" itemprop="url">机器学习(一)线性回归</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-18T10:36:21+08:00">
-                2017-03-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/机器学习/" itemprop="url" rel="index">
-                    <span itemprop="name">机器学习</span>
-                  </a>
-                </span>
-
-                
-                
-              
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye">本文总阅读量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
 
           
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
@@ -588,51 +449,98 @@
       
 
       
-        
-          
-          
+        <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default">
+</script>
+<h3 id="介绍">介绍</h3>
+<p>多人体姿态估计的方法主要分为两大类，自顶向下（top-bottom）和自底向上(bottom-top)的方法。</p>
+<p>自顶向下的方法是指先通过人体检测检测出每个人体框的位置，然后对每个人体框单独进行人体关节点估计，一般的RCNN都是这个思路，这类方法通常可以获得很高的精度，但是速度较慢。</p>
+<p>而自底向上的方法是指先估计出人体的关节点，然后根据图论知识判断每个关节点归属于哪一个人，本文介绍的这篇论文就是这种方法。</p>
+<h3 id="论文简介">论文简介</h3>
+<p><a href="https://arxiv.org/pdf/1611.08050.pdf" target="_blank" rel="external">《Realtime Multi-Person 2D Pose Estimation using Part Affinity Fields》</a>这篇论文是在<a href="https://arxiv.org/pdf/1602.00134.pdf" target="_blank" rel="external">《Convolutional Pose Machines》</a>这篇论文的基础上对多人的一个扩展，主要思路是先估计出人体关节点，然后利用PAFs(Part Affinity Fields)来对关节点分组，论文的主要流程图如下：</p>
+<center>
+<img src="/2018/04/22/pose/nets.png" alt="nets" title="网络流程">
+</center>
+<p>图中F是图像feature, Branch1是人体关节点HeatMap的回归过程，Branch2是PAFs的回归过程，每个stage的输入都是上一个stage的输出和F的concat。每个stage的输出如下：</p>
+<center>
+<img src="/2018/04/22/pose/pose1.png" alt="nets" title="stage输出">
+</center>
+<p>在这篇论文中作者使用了L2 loss来估计预测误差，同时由于在实际情况中，数据中的有一部分人体可能并没有进行标注，所以会在loss上加上一个权重，当图像中的某个位置没有标注时，该值为0；否则为1。</p>
+<p>作者在论文中说道，如果没有这个二值mask会导致在训练过程中对真实的正样本进行过度惩罚，因为我们会将没有标记的正样本当成是负样本进行学习，正样本的学习会变得困难。</p>
+<p>最终的Loss计算如下：</p>
+<center>
+<img src="/2018/04/22/pose/pose2.png" alt="nets" title="Loss输出">
+</center>
+<p>上式中：</p>
+<ul>
+<li><span class="math inline">\({\bf S}^*_j\)</span>是第<span class="math inline">\(j\)</span>个关节点的groundtruth confidence map，是基于标注点生成的高斯分布图，</li>
+<li><span class="math inline">\({\bf L}^*_c\)</span>是groundtruth part affinity vector field，是基于关节点之间计算生成的向量场。一般情况下我们用余弦距离来衡量两个向量的距离，但归一化条件下的欧式距离和余弦距离是等价的。</li>
+</ul>
+<h4 id="confidence-maps-for-part-detection">Confidence Maps for Part Detection</h4>
+<p>每一个confidence map都是用来表示每个关节点在某个像素位置上存在的置信度，我们用高斯分布来定义，在标注点的置信度为1，在其周围根据像素距离呈高斯分布扩散，总体上就是距离越远，置信度越低；距离越近，置信度越高。<span class="math inline">\({\bf S}^*_j\)</span>的计算公式如下：</p>
+<center>
+<img src="/2018/04/22/pose/pose3.png" alt="nets" title="高斯分布">
+</center>
+<p>上式中：</p>
+<ul>
+<li><span class="math inline">\({\bf x}_{j,k}\)</span>是第<span class="math inline">\(k\)</span>个人的第<span class="math inline">\(j\)</span>个关节点的真实标注位置</li>
+<li><span class="math inline">\(\sigma\)</span>是高斯方差，用来控制扩散速度</li>
+</ul>
+<p>如果是单个人，那么在每个confidence map应该都只有一个峰值；如果是多个人，在confidence map重叠的区域，我们取多个值中的最大值作为最后的值，计算公式如下：</p>
+<center>
+<img src="/2018/04/22/pose/pose4.png" alt="nets" title="最大高斯">
+</center>
+<p>在每个关节点的confidence map图中会有多个峰值点，如下图所示：</p>
+<center>
+<img src="/2018/04/22/pose/pose5.png" alt="nets" title="高斯对比">
+</center>
+<h4 id="part-affinity-fields-for-part-association">Part Affinity Fields for Part Association</h4>
+<p>在检测出了多个人体关节点后，将每个关节点和不同人对应起来有多种方法，一种最为直观的方法是就是在每一对关节点之间在多预测一个中间节点，然后通过判断一对候选的关节点和中间节点是否在一条直线上来确定它们是否属于同一个人。</p>
+<p>但是这种方法在多人密集的时候会出现较大程度的误判，一方面由于它只考虑了关节点的位置，没有考虑方向，另一方面，它将一个关节区域压缩为了一个单独的点。</p>
+<center>
+<img src="/2018/04/22/pose/pose6.png" alt="nets" title="关节点匹配图">
+</center>
+<p>上图(b)中,黑色的线是正确的匹配，绿色的线就是错误的匹配</p>
+<p>而Part Affinity Fields是一种保留关节点区域位置和方向信息的方法，如上图(c)所示,paf的计算如下公式：</p>
+<center>
+<img src="/2018/04/22/pose/pose7.png" alt="nets" title="paf计算">
+</center>
+<p>上式中：</p>
+<ul>
+<li><span class="math inline">\({\bf v} = \frac{({\bf x}_{j_2,k}-{\bf x}_{j_1,k})}{||{\bf x}_{j_2,k}-{\bf x}_{j_1,k}||_2}\)</span> 是在关节方向的单位向量，位置<span class="math inline">\({\bf p}\)</span>需要满足以下条件，即位于关节区域内：</li>
+</ul>
+<center>
+<img src="/2018/04/22/pose/pose8.png" alt="nets" title="关节示意图">
+</center>
+<center>
+<img src="/2018/04/22/pose/pose9.png" alt="nets" title="关节范围">
+</center>
+<p>上式中：</p>
+<ul>
+<li><span class="math inline">\(\sigma_l\)</span>是关节点的宽度</li>
+<li><span class="math inline">\(l_{c,k}\)</span>是关节点的长度</li>
+</ul>
+<p>在多人情况，paf对于多人重叠区域的的取值跟confidence map稍有不同，这里是通过取平均值而不是最大值，公式如下：</p>
+<center>
+<img src="/2018/04/22/pose/pose10.png" alt="nets" title="平均paf">
+</center>
+<h4 id="人体骨骼连接">人体骨骼连接</h4>
+<p>在通过网络预测出关节点的置信度点图和关节向量场之后，要如何连接图像中对应人的关节点呢？ 基本思路是： 1.对于置信度点图，在每一个小范围的区域内（例如3x3或者5x5等）寻找出极大值的位置，该点作为候选的关节点位置</p>
+<p>2.计算两个关节点之间的区域的每个向量和对应位置的paf的余弦相似度之和，该值作为关节点图匹配的边的权值，在所有可能存在的连接中找出权值最大的那个，图匹配过程如下图所示：</p>
+<center>
+<img src="/2018/04/22/pose/pose11.png" alt="nets" title="图匹配">
+</center>
+<p>整个权值的计算过程如下：</p>
+<center>
+<img src="/2018/04/22/pose/pose12.png" alt="nets" title="edge权值">
+</center>
+<p>至此，我们通过不断的匹配最好的关节点，可以将每个人的骨骼全部连接完成。</p>
+<h3 id="总结">总结</h3>
+<p>基于confidence map和paf的方法目前来看是一种性价比很高的多人姿态估计算法，它比大多数的top-down的方法要快，同时效果还能保持一定的算法性能。</p>
+<h3 id="参考文献">参考文献</h3>
+<ol style="list-style-type: decimal">
+<li><a href="https://github.com/CMU-Perceptual-Computing-Lab/openpose" target="_blank" rel="external">openpose</a></li>
+</ol>
 
-介绍
-线性回归是机器学习中的重要算法之一，其主要目的就是建立一个线性方程来预测目标值.线性回归所求解的是回归方程的回归系数.
-举个例子，我们现在有一组数据如下所示：
-
-
-
-\(x\)
-
-
-3.30
-
-
-4.40
-
-
-5.50
-
-
-6.71
-
-
-6.93
-
-
-4.17
-
-
-9.78
-
-
-6.18
-
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/18/linear/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
     
@@ -643,22 +551,78 @@
 
 <div align="center">
   
+    <div class="copyright">
+    <p><span>
+    <b>本文地址：</b><a href="/2018/04/22/pose/" title="人体姿态估计论文——《Realtime Multi-Person 2D Pose Estimation using Part Affinity Fields》">http://marxrobot.com/2018/04/22/pose/</a><br /><b>转载请注明出处，谢谢！</b>
+    </span></p>
+    </div>
+  
 </div>
 
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如有帮助，赞助饮料支持一下</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Marx 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
     
 
     
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/深度学习/" rel="tag"># 深度学习</a>
+          
+            <a href="/tags/人体姿态估计/" rel="tag"># 人体姿态估计</a>
+          
+            <a href="/tags/CMU/" rel="tag"># CMU</a>
+          
+        </div>
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/18/linear/" rel="next" title="机器学习(一)线性回归">
+                <i class="fa fa-chevron-left"></i> 机器学习(一)线性回归
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </div>
@@ -668,10 +632,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -679,6 +644,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -699,8 +668,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -797,6 +775,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#论文简介"><span class="nav-number">2.</span> <span class="nav-text">论文简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#confidence-maps-for-part-detection"><span class="nav-number">2.1.</span> <span class="nav-text">Confidence Maps for Part Detection</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#part-affinity-fields-for-part-association"><span class="nav-number">2.2.</span> <span class="nav-text">Part Affinity Fields for Part Association</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#人体骨骼连接"><span class="nav-number">2.3.</span> <span class="nav-text">人体骨骼连接</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文献"><span class="nav-number">4.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -937,6 +931,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 

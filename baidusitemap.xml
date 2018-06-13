@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>http://marxrobot.com/2018/04/22/pose/</loc>
+    <lastmod>2018-06-13T12:15:27.189Z</lastmod>
+    <data>
+        <display>
+        <title>人体姿态估计论文——《Realtime Multi-Person 2D Pose Estimation using Part Affinity Fields》</title>
+        <pubTime>2018-04-22T08:22:23.000Z</pubTime>
+        
+        <tag>深度学习</tag>
+         
+        <tag>人体姿态估计</tag>
+         
+        <tag>CMU</tag>
+         
+         
+           
+             
+              <breadCrumb title="深度学习" url="http://marxrobot.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://marxrobot.com/2017/03/18/linear/</loc>
     <lastmod>2017-10-26T17:33:55.000Z</lastmod>
     <data>
